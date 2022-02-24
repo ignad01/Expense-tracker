@@ -1,160 +1,150 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
-:root{
-    --box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
 *{
     box-sizing: border-box;
 }
 
 body{
-    background-color: #f7f7f7;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
     margin: 0;
-    font-family: 'lato', sans-serif;
+    padding: 10px 20px 20px;
+    background-color: #FBF8F1;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    align-items: center;
+    height: 100vh;
 }
 
 .container{
-    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
     width: 350px;
+    margin: 0 auto;
+    border: 1px solid gray;
+    box-shadow: 0 0 10px black;
+    border-bottom: 5px;
+    padding: 10px 20px;
+    background-color: #fff;
 }
 
 h1{
+    text-align: center;
+}
+
+h3, h4, h2{
+    margin: 0;
+}
+
+#balance{
     margin: 0;
     letter-spacing: 1px;
-}
-
-h3{
-    border-bottom: 1px solid #bbb;
-    padding-bottom: 10px;
-    margin: 40px 0 10px;
-}
-
-h4{
-    margin: 0;
-    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .inc-exp-container{
-    background-color: #fff;
-    box-shadow: var(--box-shadow);
-    padding: 10px;
     display: flex;
     justify-content: space-between;
-    margin: 20px 0;
+    padding: 10px 10px;
+    margin: 10px 0;
+    border: 1px solid gray;
+    align-items: center;
+    box-shadow: 0 1px 3px gray;
 }
 
-.inc-exp-container > div {
+.inc-exp-container p{
+    margin: 5px 0;
+}
+
+.inc-exp-container > div{
     flex: 1;
     text-align: center;
 }
 
-.inc-exp-container > div:first-of-type{
-    border-right: 1px solid #dedede;
+.inc-exp-container >  div:first-of-type{
+    border-right: 1px solid gray;
 }
 
-.money{
+#expense{
     font-size: 20px;
-    margin: 5px 0;
+    color: #FC4F4F;
+}
+
+#income{
+    font-size: 20px;
+    color: #42e92c;
+}
+
+h3{
+    border-bottom: 1px solid gray;
+    padding-bottom: 5px;
+    margin: 10px 0;
     letter-spacing: 1px;
 }
 
-.money.pluse{
-    color: #2ecc71;
+.history ul{
+    list-style-type: none;
+    margin: 5px 0px;
+    padding: 5px 5px 5px 20px;
 }
 
-.money.minus{
-    color: #c0392b;
+.history ul li{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid gray;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 0 5px gray;
+    margin: 5px 0;
+}
+
+.delete-btn{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-100%, -50%);
+    border: none;
+    background-color: #ff1d1d;
+    color: #fff;
+    padding: 3px 5px;
+}
+
+.history ul li.money_pluse{
+    border-right: 5px solid #42e92c;
+}
+
+.history ul li.money_minus{
+    border-right: 5px solid #FC4F4F;
 }
 
 label{
     display: inline-block;
-    margin: 10px 0;
+    font-weight: 700;
+    margin: 5px 0px;
 }
 
 input[type="text"], input[type="number"]{
-    border: 1px solid #dedede;
-    border-radius: 2px;
     display: block;
-    font-size: 16px;
-    padding: 10px;
+    outline: none;
     width: 100%;
+    height: 25px;
+    margin-bottom: 10px;
 }
 
-.btn{
-    background-color: #9c88ff;
-    box-shadow: var(--box-shadow);
-    border: 0;
-    padding: 10px;
-    display: block;
-    margin: 10px 0 30px;
-    width: 100%;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.list{
-    padding: 0;
-    margin-bottom: 40px;
-    list-style-type: none;
-    text-decoration: none;
-}
-
-.list li{
-    background-color: #fff;
-    color: #333;
-    box-shadow: var(--box-shadow);
-    display: flex;
-    justify-content: space-between;
+.submit{
     margin: 10px 0;
-    padding: 10px;
-    position: relative;
-    border-radius: 2px;
-}
-
-.list li.pluse{
-    border-right: 5px solid #2ecc71;
-}
-
-.list li.minus{
-    border-right: 5px solid #c0392b;
-}
-
-.delete-btn{
-    background-color: #e74c3c;
-    border: 0;
-    padding: 2px 5px;
+    width: 100%;
+    height: 30px;
+    background-color: #8A39E1;
+    border: none;
     color: #fff;
-    font-size: 20px;
-    line-height: 20px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(-100%, -50%);
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    cursor: pointer;
-}
-
-.btn:focus, .delete-btn:focus{
-    outline: 0;
-}
-
-.list li:hover .delete-btn{
-    opacity: 1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px;
 }
 
 @media (max-width: 500px){
     body{
-        padding: 10px 20px 20px 20px;
-    }
-    .container{
-        width: 100%;
+        padding: 0;
     }
 }
